@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "localserver"
+version = "0.1.0"
+description = "Servidor local pessoal"
+authors = ["vv <victor.o.tomanik@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.0.1"
+Flask-SQLAlchemy = "^2.5.1"
+dynaconf = "^3.1.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

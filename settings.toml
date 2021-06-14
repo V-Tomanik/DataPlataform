@@ -1,0 +1,6 @@
+[default]
+TITLE='LOCAL SERVER'
+EXTENSIONS=[
+'server.ext.database',
+'server.blueprints.views'
+]
