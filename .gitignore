@@ -2,3 +2,5 @@
 *.pyc
 # Ignore dynaconf secret files
 .secrets.*
+#Ignore possible files in data folder
+*/data/*
