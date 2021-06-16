@@ -1,6 +1,8 @@
 [default]
 TITLE='LOCAL SERVER'
+template_folder='./blueprints/templates'
 EXTENSIONS=[
 'server.ext.database',
-'server.blueprints.views'
+'server.blueprints.views',
+'server.ext.apperance'
 ]

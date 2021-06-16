@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Eye of Storm{% endblock %}
+
+{% block content %}
+<header> Eye Storm </header>
+<!-- Bloco para adicionar o arquivo -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an dataset</h1>
+
+      <form action="/upload-file" method="POST" enctype="multipart/form-data">
+
+		<!-- Adiciona o formulario para o input do arquivo -->
+        <div class="form-group">
+          <label>Select file</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="dataset" id="dataset">
+            <label class="custom-file-label" for="image">Select file...</label>
+          </div>
+        </div>
+		<!-- Botão para fazer o post -->
+        <button type="submit" class="btn btn-primary">Upload</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
