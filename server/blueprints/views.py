@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect,send_file
+from flask import render_template, request, redirect,send_from_directory,abort
 
 import os
 
@@ -23,6 +23,9 @@ def init_app(app):
         # Redireciona para a url que recebeu o post
         return redirect(request.referrer) 
 
-    @app.route("/download-file")
-    def download_file(name):
-        send_file(os.path.join(app.config['data_folder'],name),as_attachment=True)
+    @app.route("/download-file/<string:file>")
+    def download_file(file):
+        try:
+            return send_from_directory(directory=app.config['data_folder'],filename=file,as_attachment=True)
+        except:
+            abort(404)
