@@ -5,10 +5,11 @@ class process():
 
     @staticmethod
     def import_file(file_path:str,sep:str,null_value:str=''):
-        #read table
         table = pd.read_csv(sep=sep,filepath_or_buffer=file_path, \
                             na_values=null_value,names=['x','y','z'],\
+                            engine='python', \
                             dtype={'x':np.float128,'y':np.float128,'z':np.float128})
+
         return table
 
     @staticmethod
@@ -73,4 +74,5 @@ class process():
     @staticmethod
     def run(path,separator,null_value):
         dado = process.import_file(path,separator,null_value)
+        print(process.max_min(dado))
         

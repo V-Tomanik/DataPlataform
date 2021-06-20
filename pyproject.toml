@@ -11,6 +11,7 @@ Flask-SQLAlchemy = "^2.5.1"
 dynaconf = "^3.1.4"
 Flask-Bootstrap = "^3.3.7"
 pandas = "^1.2.4"
+numpy = "^1.20.3"
 
 [tool.poetry.dev-dependencies]
 

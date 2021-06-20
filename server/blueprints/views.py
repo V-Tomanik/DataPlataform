@@ -15,9 +15,11 @@ def init_app(app):
         if 'file_uploaded' in request.cookies:
             file_name = request.cookies.get('file_uploaded')
             sep = request.cookies.get('separator')
-
+            file_path = os.path.join(app.config.root_path,
+                    app.config['data_folder'],
+                    file_name)
+            et.process.run(file_path,sep,null_value='')
             # TODO: Fazer o load do pandas functionar
-            #file_path = os.path.join(app.config['data_folder'],file_name)
         return render_template('eyestorm.html')
 
     @app.route("/upload-file", methods=['POST'])
