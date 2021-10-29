@@ -1,9 +1,0 @@
-[default]
-TITLE='LOCAL SERVER'
-template_folder='./blueprints/templates'
-data_folder='back/data/'
-EXTENSIONS=[
-'server.ext.database',
-'server.blueprints.views',
-'server.ext.apperance'
-]
