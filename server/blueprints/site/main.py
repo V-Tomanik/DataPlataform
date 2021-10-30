@@ -3,7 +3,7 @@ from flask import Blueprint
 
 
 #Cria um sub-app
-pb = Blueprint("Site",__name__)
+pb = Blueprint("MainSite",__name__,template_folder="templates",static_folder="statics")
 
 
 @pb.route("/")
@@ -19,4 +19,4 @@ def eyestorm():
 @pb.route("/central")
 def import_files_central():
     """Central do site """
-    return render_template('central.html')
+    return render_template('home.html')

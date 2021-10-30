@@ -1,5 +1,6 @@
 [default]
 TITLE='LOCAL SERVER'
+EXTENSIONS=[]
 BLUEPRINTS=[
 'server.blueprints.site',
 'server.blueprints.api',

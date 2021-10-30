@@ -7,7 +7,7 @@ import os
 #Cria um sub-app
 api = Blueprint("api",__name__)
 
-
+#Salvar arquivos
 @api.route("/upload-file", methods=['POST'])
 def upload_file():
     """Rota referencial para receber arquivos"""
@@ -28,6 +28,7 @@ def upload_file():
         return response 
     return "404"
 
+#Download de arquivos
 @api.route("/download-file/<filename>")
 def download_file(filename):
     """Rota referencial para fornecer arquivos"""
@@ -36,6 +37,7 @@ def download_file(filename):
     except:
             abort(404)
 
+#Iniciar o processo eyestorm
 @api.route("/eyestormprocess/<filename>;<separator>")
 def eyestorm_init_process(filename,separator):
     file_path = os.path.join(current_app.instance_path,filename)

@@ -1,0 +1,117 @@
+/*  . por que é a classe */
+.content{
+	display: grid;
+	/* Duas colunas envolvendo 60 e 40% da tela */
+	grid-template-columns:60% 40%;
+	/*Primeira linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
+	grid-template-rows: 11.4rem 1fr;
+
+	/*Define quem ocupa quais áreas  */
+	/* Segunda linha e as duas colunas */
+ 	/* Primeira linha e as duas colunas */
+	grid-template-areas:
+	"header header"  
+	"left right"
+}
+
+
+/*Define o que é cada um dos segmentos que eu define no template-areas */
+/* elemento html -> elemento no template-area */
+header{
+	grid-area: header;
+}
+
+/* # por que é o id da div  */
+#bg{
+	grid-area:left;
+	/* top/contain define para a imagem se encaixar no top e na div inteira (não corta a imagem) */
+	background: url("../assets/home_bg_img.svg") no-repeat top/contain;
+	background-position-x: -2rem;
+}
+
+main{
+	grid-area: right;
+
+	/*Para organizar os elementos alinhados usamos display-flex */
+	display: flex;
+	align-items: center;	
+	margin-top: -12rem;
+}
+
+main .container {
+	width: min(36.3rem, 100%);
+}
+
+
+main h2{
+    font-family: 'Poppins', sans-serif;
+	color: var(--black);
+	font-size: clamp(20px 5vw, 2.8rem);
+	margin-bottom: 2.4rem;
+}
+
+input{
+	border: .2rem solid var(--grey-blue);
+	padding: 0 1.6rem;
+}
+
+input, button, .button{
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+/* separadores */
+.separator{
+	display:flex;
+	align-items: center;
+
+	margin:4px;
+}
+
+
+.separator div:nth-child(2){
+	color: var(--grey-blue);
+	font-family: 'Poppins';
+	font-weith: 400;
+	padding: 1.35rem;
+}
+
+
+/* Como a div sepatator encapulsa as 3,
+ * usamos essa para selecionar quais os filhos(divs)
+ * que queremos selecionar */
+.separator div:nth-child(1),
+.separator div:nth-child(3)
+{
+	background: var(--grey-blue);
+	width: 100%;
+	height: 1px;
+
+}
+
+/*  Criando as balls do bg*/
+.ball{
+	width: 21.2rem;
+	background: var(--blue);
+    height: 21.2rem;
+    clip-path: circle();
+    opacity: 0.1;
+
+
+	/* position fixed fica na frente de tudo */
+	position: fixed;
+
+
+}
+
+.ball.top{
+    top: -46rem;
+    width: 63.3rem;
+    right: -35rem;
+    height: 63.3rem;
+}
+
+.ball.bottom{
+    bottom: -15rem;
+    right: 5.6rem
+}

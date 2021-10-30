@@ -4,3 +4,5 @@
 .secrets.*
 #Ignore possible files in data folder
 *back/data/*
+#Ignore files in instance folder
+instance/*
