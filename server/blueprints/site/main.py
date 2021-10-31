@@ -19,4 +19,4 @@ def eyestorm():
 @pb.route("/central")
 def import_files_central():
     """Central do site """
-    return render_template('home.html')
+    return render_template('central.html')
