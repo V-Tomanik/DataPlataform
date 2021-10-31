@@ -24,19 +24,21 @@ header{
     align-items: center;
 }
 
+header #logo {
+    margin-top: 3.8rem;
+}
+
 header h1{
     font-family: 'Poppins', sans-serif;
 	color: var(--black);
-	font-size: clamp(9rem,9rem ,12rem);
+	font-size: clamp(20px, 4vw, 5rem);
 }
 /* # por que é o id da div  */
 #bg{
-	grid-area:right;
 }
 
 main{
 	grid-area: right;
-
 	/*Para organizar os elementos alinhados usamos display-flex */
 	display: flex;
 	align-items: center;	
@@ -55,6 +57,22 @@ main h2{
 	margin-bottom: 2.4rem;
 }
 
+select {
+  /* A reset of styles, including removing the default dropdown arrow */
+  background-color: transparent;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px 5vw, 2.8rem);
+  cursor: pointer;
+  border: 1px solid var(--black_central);
+  border-radius: 0.25em
+}
+
+
+
 input{
 	border: .2rem solid var(--grey-blue);
 	padding: 0 1.6rem;
@@ -65,35 +83,6 @@ input, button, .button{
     margin-bottom: 1.8rem;
 }
 
-/* separadores */
-.separator{
-	display:flex;
-	align-items: center;
-
-	margin:4px;
-}
-
-
-.separator div:nth-child(2){
-	color: var(--grey-blue);
-	font-family: 'Poppins';
-	font-weith: 400;
-	padding: 1.35rem;
-}
-
-
-/* Como a div sepatator encapulsa as 3,
- * usamos essa para selecionar quais os filhos(divs)
- * que queremos selecionar */
-.separator div:nth-child(1),
-.separator div:nth-child(3)
-{
-	background: var(--grey-blue);
-	width: 100%;
-	height: 1px;
-
-}
-
 /*  Criando as balls do bg*/
 .ball{
 	width: 70rem;
@@ -102,14 +91,12 @@ input, button, .button{
     clip-path: circle();
     opacity: 0.3;
 
-
 	/* position fixed fica na frente de tudo */
 	position: fixed;
-
-
 }
 
 .ball.bottom{
+	grid-area:right;
     bottom: -15rem;
 	right: -15rem;
 }
