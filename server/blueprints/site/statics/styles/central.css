@@ -3,55 +3,76 @@
 	display: grid;
 	grid-template-columns: 1fr ;
 	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
-	grid-template-rows: 11.4rem 11.4rem 1fr;
+	grid-template-rows: 22.8rem 1fr;
 
 	/*Define quem ocupa quais áreas  */
 	/* Segunda linha e as tres colunas */
  	/* Primeira linha e as tres colunas */
 	grid-template-areas:
 	"header"  
-	"subheader"
 	"body"
 }
 
 /*-------------------------Header Things--------------------------------------------------- */
 /*Define o que é cada um dos segmentos que eu define no template-areas */
 /* elemento html -> elemento no template-area */
-.titulo{
+.header{
+	display:grid;
 	grid-area: header;
-	display: flex;
 
+	grid-template-columns: 1fr ;
+	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
+	grid-template-rows: 13rem 1fr;
+
+	grid-template-areas:
+	"titulo"  
+	"navegacao"
 }
 
-.titulo #logo {
-    margin-top: 3.8rem;
-	place-self: center;
+.header img{
+	grid-area:titulo;
+	width: 13rem;
+    height: 13rem;
+	object-fit:cover;
 }
 
-.titulo #nome_pagina{
-	place-self: center;
+.header #nome_pagina{
+	grid-area:titulo;
     font-family: 'Poppins', sans-serif;
 	color: var(--black);
 	font-size: clamp(20px, 4vw, 5rem);
-	margin-left: 8rem;
+	place-self: center;
 }
 
+#navbar{
+	grid-area:navegacao;
+	display:flex;
+	align-items:center; /*Todos os filhos desse item são alinhados no centro */
+}
 
-
+#navbar button{
+	margin-right:4px;
+	margin-left:230px;
+}
 /*-------------------------Main Things--------------------------------------------------- */
 .formulario{
 	/*Para organizar os elementos alinhados usamos display-flex */
 	grid-area: body;
-	display:flex
+	display:grid;
+	grid-template-columns: 2fr;
+	grid-template-rows: 1fr;
 }
 
 #files{
-	float:left;
-	width: 50rem;
-	background: var(--black);
+	grid-area:files;
+	width: 40rem;
+    opacity: 0.3;
+  	border: 5px solid var(--green);
+  	border-radius: 0.5em
+	margin-top: 20px;
 }
 #container {
-	float:rigt;
+	grid-area:entrega;
 	width: min(36.3rem, 100%);
 	margin-top: 6rem;
 	margin-left: 10rem;
@@ -87,14 +108,16 @@ input{
 }
 
 input, button, .button{
-    width: 100%;
-    margin-bottom: 1.8rem;
+	padding: 0 1.6rem;
 }
 
 
 /*-------------------------Background Things--------------------------------------------------- */
+/* Isso aqui ta meio errado mas funciona, o background não deveria pertencer a nenhum grid  */
 .bg{
-	grid-area: subheader;
+	grid-area: header;
+	align-self: end;
+	z-index:-1;
 }
 
 #menu{
@@ -108,13 +131,12 @@ input, button, .button{
 	background: var(--green);
     clip-path: circle();
     opacity: 0.3;
-
 	/* position fixed fica na frente de tudo */
 }
 
 .ball.bottom{
     bottom: -15rem;
 	right: -15rem;
-	position: fixed;
+	position:fixed;
 }
 

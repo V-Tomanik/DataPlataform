@@ -82,7 +82,7 @@ button, .button{
 	align-items:center;
 	justify-content: center;
 
-	background: var(--blue);
+	background: var(--black_central);
 	color: var(--white);
 
 	/*Tempo de transição da ação: Filter */

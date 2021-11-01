@@ -22,13 +22,21 @@
 	<body>
 		<div id="home" class="content">
 
-			<header class="titulo">
+			<header class="header">
 				<!--  Adiciona o logo  -->
-				<div id="logo">
-					<img src={{url_for('.static', filename='assets/logo.png')}} alt="LogoEmpresaDummy" id:"logoimg">
-				</div>
+				<img src={{url_for('.static', filename='assets/logo.png')}} alt="LogoEmpresaDummy" id:"logoimg">
 				<h1 id="nome_pagina"> Central Data Plataform </h1>
-				<div>
+				<div id="navbar">
+					<button>
+						Enviar Arquivo
+					</button>
+					<button>
+						Resumo de Entregas
+					</button>
+					<button>
+						Calendário de Entregas
+					</button>
+				</div>
 			</header>
 
 
@@ -38,32 +46,24 @@
 				<div id="menu"> </div>
 			</div>
 			<!-- Conteudo -->
+
 			<main class="formulario">
 					<div id="files"> </div>
 					<div id="container">
-						<section>
-							<h2> Selecione o processo</h2>
-							<form>
-								<div class="select">
-									<select id="select-process">
-										<option value = "data_tracking">Data Tracking</option>
-										<option value = "pi">PI</option>
-										<option value = "programming_index">Programming Index</option>
-									</select>
-								</div>
-								<button>
-									<img src ={{url_for('.static', filename='assets/enter_room.svg')}} alt="Entrar na Sala">
-									Confirmar
-								</button>
-							</form>
-						</section>
-
-						<section> 
-							<h2>Crie sua própria sala, de forma fácil </h2>
-							<a href="create-pass.html" class="button outlined">
-								<img src={{url_for('.static', filename='assets/user.svg')}} alt="Criar Sala">Criar Sala
-							</a>
-						</section>
+						<h2> Selecione o processo</h2>
+						<form>
+							<div class="select">
+								<select id="select-process">
+									<option value = "data_tracking">Data Tracking</option>
+									<option value = "pi">PI</option>
+									<option value = "programming_index">Programming Index</option>
+								</select>
+							</div>
+							<button>
+								<img src ={{url_for('.static', filename='assets/enter_room.svg')}} alt="Entrar na Sala">
+								Confirmar
+							</button>
+						</form>
 					</div>
 			</main>
 		</div>
