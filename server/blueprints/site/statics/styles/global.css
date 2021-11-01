@@ -24,8 +24,8 @@ html{
 	--grey-medium:	#EAECF2;
 
 	--green: 		#007F2D;
-	--grey_central1:#BDBCBC;
-	--grey_central2:#A5AAB6;
+	--grey_central:#BDBCBC;
+	--grey_central_dark:#A5AAB6;
 	--black_central:#393E41;
 
 	/*Vamos mudar o padrão do html para 10px (O normal é 16) */

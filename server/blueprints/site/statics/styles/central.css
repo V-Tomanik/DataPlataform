@@ -2,7 +2,7 @@
 .content{
 	display: grid;
 	/* Divide as colunas igualmente */
-	grid-template-columns:33% 33% 33%;
+	grid-template-columns:repeat(3, 1fr) ;
 	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
 	grid-template-rows: 11.4rem 11.4rem 1fr;
 
@@ -11,35 +11,38 @@
  	/* Primeira linha e as tres colunas */
 	grid-template-areas:
 	"header header header"  
-	"Meio Meio Meio"
+	"subheader subheader subheader"
 	"left center right "
 }
 
-
+/*-------------------------Header Things--------------------------------------------------- */
 /*Define o que é cada um dos segmentos que eu define no template-areas */
 /* elemento html -> elemento no template-area */
 header{
 	grid-area: header;
 	display: flex;
-    align-items: center;
+
 }
 
 header #logo {
     margin-top: 3.8rem;
+	place-self: center;
 }
 
 header h1{
+	place-self: center;
     font-family: 'Poppins', sans-serif;
 	color: var(--black);
 	font-size: clamp(20px, 4vw, 5rem);
-}
-/* # por que é o id da div  */
-#bg{
+	margin-left: 8rem;
 }
 
+
+
+/*-------------------------Main Things--------------------------------------------------- */
 main{
-	grid-area: right;
 	/*Para organizar os elementos alinhados usamos display-flex */
+	grid-area: center;
 	display: flex;
 	align-items: center;	
 	margin-top: -12rem;
@@ -47,6 +50,7 @@ main{
 
 main .container {
 	width: min(36.3rem, 100%);
+	margin-left: 10rem;
 }
 
 
@@ -83,6 +87,16 @@ input, button, .button{
     margin-bottom: 1.8rem;
 }
 
+
+/*-------------------------Background Things--------------------------------------------------- */
+#bg{
+	grid-area: subheader;
+}
+
+.menu{
+	height: 10rem;
+	background:var(--grey_central_dark);
+}
 /*  Criando as balls do bg*/
 .ball{
 	width: 70rem;
@@ -96,7 +110,7 @@ input, button, .button{
 }
 
 .ball.bottom{
-	grid-area:right;
     bottom: -15rem;
 	right: -15rem;
 }
+
