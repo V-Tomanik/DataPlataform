@@ -1,8 +1,7 @@
 /*  . por que é a classe */
-.content{
+#home{
 	display: grid;
-	/* Divide as colunas igualmente */
-	grid-template-columns:repeat(3, 1fr) ;
+	grid-template-columns: 1fr ;
 	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
 	grid-template-rows: 11.4rem 11.4rem 1fr;
 
@@ -10,26 +9,26 @@
 	/* Segunda linha e as tres colunas */
  	/* Primeira linha e as tres colunas */
 	grid-template-areas:
-	"header header header"  
-	"subheader subheader subheader"
-	"left center right "
+	"header"  
+	"subheader"
+	"body"
 }
 
 /*-------------------------Header Things--------------------------------------------------- */
 /*Define o que é cada um dos segmentos que eu define no template-areas */
 /* elemento html -> elemento no template-area */
-header{
+.titulo{
 	grid-area: header;
 	display: flex;
 
 }
 
-header #logo {
+.titulo #logo {
     margin-top: 3.8rem;
 	place-self: center;
 }
 
-header h1{
+.titulo #nome_pagina{
 	place-self: center;
     font-family: 'Poppins', sans-serif;
 	color: var(--black);
@@ -40,25 +39,30 @@ header h1{
 
 
 /*-------------------------Main Things--------------------------------------------------- */
-main{
+.formulario{
 	/*Para organizar os elementos alinhados usamos display-flex */
-	grid-area: center;
-	display: flex;
-	align-items: center;	
-	margin-top: -12rem;
+	grid-area: body;
+	display:flex
 }
 
-main .container {
+#files{
+	float:left;
+	width: 50rem;
+	background: var(--black);
+}
+#container {
+	float:rigt;
 	width: min(36.3rem, 100%);
+	margin-top: 6rem;
 	margin-left: 10rem;
 }
 
 
-main h2{
+#container h2{
     font-family: 'Poppins', sans-serif;
 	color: var(--black);
 	font-size: clamp(20px 5vw, 2.8rem);
-	margin-bottom: 2.4rem;
+	margin-bottom: 1rem;
 }
 
 select {
@@ -72,7 +76,7 @@ select {
   font-size: clamp(20px 5vw, 2.8rem);
   cursor: pointer;
   border: 1px solid var(--black_central);
-  border-radius: 0.25em
+  border-radius: 0.5em
 }
 
 
@@ -89,28 +93,28 @@ input, button, .button{
 
 
 /*-------------------------Background Things--------------------------------------------------- */
-#bg{
+.bg{
 	grid-area: subheader;
 }
 
-.menu{
+#menu{
 	height: 10rem;
 	background:var(--grey_central_dark);
 }
 /*  Criando as balls do bg*/
 .ball{
 	width: 70rem;
-    height: 70rem;
+    height:70rem;
 	background: var(--green);
     clip-path: circle();
     opacity: 0.3;
 
 	/* position fixed fica na frente de tudo */
-	position: fixed;
 }
 
 .ball.bottom{
     bottom: -15rem;
 	right: -15rem;
+	position: fixed;
 }
 
