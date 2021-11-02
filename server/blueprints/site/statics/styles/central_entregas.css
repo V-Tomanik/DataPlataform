@@ -1,0 +1,103 @@
+#home{
+	display: grid;
+	grid-template-columns: 1fr ;
+	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
+	grid-template-rows: 22.8rem 1fr;
+
+	/*Define quem ocupa quais áreas  */
+	/* Segunda linha e as tres colunas */
+ 	/* Primeira linha e as tres colunas */
+	grid-template-areas:
+	"header"  
+	"body"
+}
+
+/*-------------------------Header Things--------------------------------------------------- */
+.header{
+	display:grid;
+	grid-area: header;
+
+	grid-template-columns: 1fr ;
+	/*Primeira e segunda linha defina como 11.4 rem,o resto divide em 1 fração (Pega o resto da tela)   */
+	grid-template-rows: 13rem 1fr;
+
+	grid-template-areas:
+	"titulo"  
+	"navegacao"
+}
+
+.header img{
+	grid-area:titulo;
+	width: 13rem;
+    height: 13rem;
+	object-fit:cover;
+}
+
+.header #nome_pagina{
+	grid-area:titulo;
+    font-family: 'Poppins', sans-serif;
+	color: var(--black);
+	font-size: clamp(20px, 4vw, 5rem);
+	place-self: center;
+}
+
+#navbar{
+	grid-area:navegacao;
+	display:flex;
+	align-items:center; /*Todos os filhos desse item são alinhados no centro */
+}
+
+#navbar button{
+	margin-right:4px;
+	margin-left:230px;
+}
+
+input{
+	border: .2rem solid var(--grey-blue);
+	padding: 0 1.6rem;
+}
+
+input, button, .button{
+	padding: 0 1.6rem;
+}
+
+
+/*-------------------------Background Things--------------------------------------------------- */
+/* Isso aqui ta meio errado mas funciona, o background não deveria pertencer a nenhum grid  */
+.bg{
+	grid-area: header;
+	align-self: end;
+	z-index:-1;
+}
+
+#menu{
+	height: 10rem;
+	background:var(--grey_central_dark);
+}
+/*  Criando as balls do bg*/
+.ball{
+	width: 70rem;
+    height:70rem;
+	background: var(--green);
+    clip-path: circle();
+    opacity: 0.3;
+	/* position fixed fica na frente de tudo */
+}
+
+.ball.bottom{
+    bottom: -15rem;
+	right: -15rem;
+	position:fixed;
+}
+
+/*-------------------------Body Things--------------------------------------------------- */
+.entregas{
+	grid-area:body
+}
+
+.entregas img{
+	margin-left: 50rem;
+	margin-top: 5rem;
+
+}
+

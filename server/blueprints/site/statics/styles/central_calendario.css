@@ -52,6 +52,16 @@
 	margin-left:230px;
 }
 
+input{
+	border: .2rem solid var(--grey-blue);
+	padding: 0 1.6rem;
+}
+
+input, button, .button{
+	padding: 0 1.6rem;
+}
+
+
 /*-------------------------Background Things--------------------------------------------------- */
 /* Isso aqui ta meio errado mas funciona, o background não deveria pertencer a nenhum grid  */
 .bg{
