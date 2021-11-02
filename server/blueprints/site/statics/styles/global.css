@@ -42,7 +42,7 @@ body{
 }
 
 /*Variaveis para todos esses elementos */
-body,button,input,textarea{
+body,h3,button,input,textarea{
 	/*Minimo,padrao,maximo*/
 	font-size:clamp(14px, 1.6rem, 2vw);
 

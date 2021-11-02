@@ -20,3 +20,14 @@ def eyestorm():
 def import_files_central():
     """Central do site """
     return render_template('central.html')
+
+@pb.route("/central/calendario")
+def calendario_central():
+    """Central do site """
+    return render_template('central_calendario.html')
+
+@pb.route("/central/entregas")
+def entregas_central():
+    """Central do site """
+    return render_template('central_entregas.html')
+
