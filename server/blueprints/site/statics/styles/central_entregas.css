@@ -1,3 +1,4 @@
+/*  . por que é a classe */
 #home{
 	display: grid;
 	grid-template-columns: 1fr ;
@@ -13,6 +14,8 @@
 }
 
 /*-------------------------Header Things--------------------------------------------------- */
+/*Define o que é cada um dos segmentos que eu define no template-areas */
+/* elemento html -> elemento no template-area */
 .header{
 	display:grid;
 	grid-area: header;
@@ -51,10 +54,74 @@
 	margin-right:4px;
 	margin-left:230px;
 }
+/*-------------------------Main Things--------------------------------------------------- */
+.formulario{
+	/*Para organizar os elementos alinhados usamos display-flex */
+	grid-area: body;
+	display:grid;
+	grid-template-columns:50rem 1fr;
+}
+
+#files{
+  	grid-column-start: 1;
+	grid-column-end: 2;
+
+	width: 40rem;
+    height: 55rem;
+    opacity: 0.3;
+  	border: 5px solid var(--green);
+  	border-radius: 0.5em;
+	place-self:center;
+}
+#container {
+  	grid-column-start: 2;
+	grid-column-end: 3;
+	align-self:start;
+}
+
+#container form{
+	width: min(36.3rem, 100%);
+}
+
+
+#container h2{
+    font-family: 'Poppins', sans-serif;
+	color: var(--black);
+	font-size: clamp(20px 5vw, 2.8rem);
+	margin-bottom: 1rem;
+	margin-top: 5rem;
+}
+
+#container form button{
+	margin-top: 2rem;
+
+
+}
+select {
+  /* A reset of styles, including removing the default dropdown arrow */
+  background-color: transparent;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 50%;
+  height: 4rem;
+  text-align:center;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px 5vw, 2.8rem);
+  cursor: pointer;
+  border: 1.5px solid var(--black_central);
+  border-radius: 0.5em;
+  margin-bottom:1rem;
+}
+
+#select-process{
+	margin-bottom:3rem;
+}
 
 input{
 	border: .2rem solid var(--grey-blue);
 	padding: 0 1.6rem;
+	margin-top:1rem;
 }
 
 input, button, .button{
@@ -88,16 +155,5 @@ input, button, .button{
     bottom: -15rem;
 	right: -15rem;
 	position:fixed;
-}
-
-/*-------------------------Body Things--------------------------------------------------- */
-.entregas{
-	grid-area:body
-}
-
-.entregas img{
-	margin-left: 50rem;
-	margin-top: 5rem;
-
 }
 

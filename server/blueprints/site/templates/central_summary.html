@@ -12,12 +12,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href={{ url_for('.static', filename='styles/global.css') }}>
-		<!--Pegamos o calendario de uma biblioteca, aqui nos estamos importando os Arquivo dessa biblio -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
-		<link rel="stylesheet" href={{ url_for('.static', filename='styles/central_calendario.css') }}>
-
-		<!-- JS -->
-		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+		<link rel="stylesheet" href={{ url_for('.static', filename='styles/central_summary.css') }}>
 
 		<!-- Fontes -->
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -49,23 +44,11 @@
 				<div class='ball bottom'>	</div>
 				<div id="menu"> </div>
 			</div>
+			<!-- Conteudo -->
 
-			<div id="calendar"></div>
-			<script>
-				let calendarE1 = document.getElementById("calendar")
-				let calendar = new FullCalendar.Calendar(calendarE1,
-					{events:[
-						{%for event in eventos %}
-							{
-							title : '{{event.nome}}',
-							date : '{{event.date}}',
-							color : '{{event.color}}'
-							},
-						{% endfor %}
-							]
-					});
-				calendar.render();
-			</script>
+			<main class="entregas">
+				<img src={{url_for('.static', filename='assets/Entregas.png')}} alt="LogoEmpresaDummy" id:"logoimg">
+			</main>
 		</div>
 	</body>
 </html>
