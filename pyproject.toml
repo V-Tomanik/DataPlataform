@@ -5,7 +5,7 @@ description = "Servidor local pessoal"
 authors = ["vv <victor.o.tomanik@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.12"
 Flask = "^2.0.1"
 Flask-SQLAlchemy = "^2.5.1"
 dynaconf = "^3.1.4"
