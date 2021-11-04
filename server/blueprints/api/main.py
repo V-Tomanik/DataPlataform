@@ -12,20 +12,20 @@ api = Blueprint("api",__name__)
 def upload_file():
     """Rota referencial para receber arquivos"""
     #Verifica o nome do arquivo que foi recebido
+    files = request.files.getlist('arquivos[]')
+    for file in files:
+        filename = file.filename
+        # TODO: Ver o tamanho do arquivo (cookie) e se a extensao esta ok
+        if filename:
+            file.save(os.path.join(current_app.instance_path,filename))
+            # Redireciona para a url que recebeu o post com um cookie informando do upload
+            response = make_response(redirect(request.referrer))
+            response.set_cookie('file_uploaded',filename)
+            #Pega qualquer valor passado no forms e transforma em cookie (generalizacao para outros casos)
+            for key,value in request.form.items():
+                response.set_cookie(key,value)
 
-    file = request.files['arquivo']
-    filename = file.filename
-    # TODO: Ver o tamanho do arquivo (cookie) e se a extensao esta ok
-    if filename:
-        file.save(os.path.join(current_app.instance_path,filename))
-        # Redireciona para a url que recebeu o post com um cookie informando do upload
-        response = make_response(redirect(request.referrer))
-        response.set_cookie('file_uploaded',filename)
-        #Pega qualquer valor passado no forms e transforma em cookie (generalizacao para outros casos)
-        for key,value in request.form.items():
-            response.set_cookie(key,value)
-
-        return response 
+            return response 
     return "404"
 
 #Download de arquivos

@@ -18,11 +18,6 @@ events=[
 ]
 
 
-@pb.route("/eyestorm")
-def eyestorm():
-    """ Página para tratamento e visualização de dados"""
-    return render_template('eyestorm.html')
-
 @pb.route("/")
 @pb.route("/entregas")
 def import_files_central():
