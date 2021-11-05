@@ -92,12 +92,12 @@ input, button, .button{
 
 /*-------------------------Body Things--------------------------------------------------- */
 .entregas{
-	grid-area:body
+	grid-area:body;
 }
 
-.entregas img{
-	margin-left: 50rem;
+.entregas #tabela_mes{
 	margin-top: 5rem;
-
+	margin-left: 50rem;
+	margin-right: 50rem;
 }
 

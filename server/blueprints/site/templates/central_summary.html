@@ -10,8 +10,13 @@
 		<!-- TODO: Ver o que isso faz -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<!-- JS -->
+
+		<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.1/dist/js/tabulator.min.js"></script>
 		<!-- CSS -->
 		<link rel="stylesheet" href={{ url_for('.static', filename='styles/global.css') }}>
+		<link href="https://unpkg.com/tabulator-tables@4.8.1/dist/css/tabulator.min.css" rel="stylesheet">
+
 		<link rel="stylesheet" href={{ url_for('.static', filename='styles/central_summary.css') }}>
 
 		<!-- Fontes -->
@@ -47,7 +52,136 @@
 			<!-- Conteudo -->
 
 			<main class="entregas">
-				<img src={{url_for('.static', filename='assets/Entregas.png')}} alt="LogoEmpresaDummy" id:"logoimg">
+				<div id="tabela_mes"></div>
+				<script type="text/javascript">
+        var tabledata = [{
+                entregaid: 1,
+                praca: "SaoPaulo",
+                estado: "SP",
+                mes_entrega: 1,
+				nome_arquivo:"saopaulo_sp_janeiro_trp",
+                enviado: "Sim"
+            }, {
+                entregaid: 2,
+                praca: "SaoPaulo",
+                estado: "SP",
+				nome_arquivo:"saopaulo_sp_fevereiro_trp",
+                mes_entrega: 2,
+                enviado: "Sim"
+            }, {
+                entregaid: 3,
+                praca: "Rio de Janeiro",
+                estado: "RJ",
+                mes_entrega: 2,
+				nome_arquivo:"riodejaneiro_rj_fevereiro_trp",
+                enviado: "Sim"
+            }, {
+                entregaid: 4,
+                praca: "Rio de Janeiro",
+                estado: "RJ",
+                mes_entrega: 1,
+				nome_arquivo:"riodejaneiro_rj_janeiro_trp",
+                enviado: "Não"
+            }, {
+                entregaid: 5,
+                praca: "Manaus",
+                estado: "AM",
+                mes_entrega: 8,
+				nome_arquivo:"manaus_am_agosto_trp",
+                enviado: "Não"
+            },
+			 {
+                entregaid: 6,
+                praca: "Manaus",
+                estado: "AM",
+                mes_entrega: 2,
+				nome_arquivo:"manaus_am_fevereiro_trp",
+                enviado: "Sim"
+            },
+			 {
+                entregaid: 7,
+                praca: "Manaus",
+                estado: "AM",
+                mes_entrega: 5,
+				nome_arquivo:"manaus_am_maio_trp",
+                enviado: "Sim"
+            },
+			 {
+                entregaid: 8,
+                praca: "Manaus",
+                estado: "AM",
+                mes_entrega: 1,
+				nome_arquivo:"manaus_am_janeiro_trp",
+                enviado: "Não"
+            },
+			 {
+                entregaid: 9,
+                praca: "Porto Alegre",
+                estado: "RS",
+                mes_entrega: 1,
+				nome_arquivo:"portoalegre_rs_janeiro_trp",
+                enviado: "Sim"
+            },
+			 {
+                entregaid: 10,
+                praca: "Porto Alegre",
+                estado: "RS",
+                mes_entrega: 3,
+				nome_arquivo:"portoalegre_rs_marco_trp",
+                enviado: "Sim"
+            },
+			 {
+                entregaid: 11,
+                praca: "Porto Alegre",
+                estado: "RS",
+                mes_entrega: 11,
+				nome_arquivo:"portoalegre_rs_novembro_trp",
+                enviado: "Não"
+            },
+        ]; 
+		var table = new Tabulator("#tabela_mes", {
+			height: 500,
+            data: tabledata,
+            layout: "fitColumns",
+            pagination: "local",
+            paginationSize: 11,
+            tooltips: true,
+            columns: [{
+                    title: "Mês Entrega",
+                    field: "mes_entrega",
+                    sorter: "number",
+                    hozAlign: "center",
+                    headerFilter: true,
+                    width: 150,
+                }, {
+                    title: "Praça",
+                    field: "praca",
+                    sorter: "string",
+                    hozAlign: "left",
+                    width: 150,
+                },
+                {
+                    title: "Estado",
+                    field: "estado",
+                    sorter: "string",
+                    hozAlign: "center",
+                    headerFilter: true,
+                    width: 150,
+                }, {
+                    title: "Nome Arquivo Esperado",
+                    field: "nome_arquivo",
+                    hozAlign: "center",
+                    width: 250,
+                }, {
+                    title: "Enviado",
+                    field: "enviado",
+                    hozAlign: "center",
+                    width: 150,
+                },
+
+            ],
+        });
+				</script>
 			</main>
 		</div>
 	</body>
