@@ -10,3 +10,4 @@ def create_app():
     #Importa os blueprints
     configuration.load_blueprint(app)
     return app
+
