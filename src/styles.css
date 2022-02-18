@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+	--black:	#0D114F;
+	--white: 	#FAFAFA;
+	--red:		#E83F5B;
+	
+	height: 100%;
+
+	/*Vamos mudar o padrão do html para 10px (O normal é 16) */
+	font-size: 62.5%;
+}
+/* for sidenav to take a whole page */
+
+body {
+	height: 100%;  margin: 0; 
+	font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+

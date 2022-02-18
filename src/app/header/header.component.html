@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+	<!---Directive para comprimir o header em um botão caso a tela for pequena -->
+	<div fxHide.gt-xs>
+		<button mat-icon-button (click)="OnToggleSidenav()">
+			<mat-icon>Menu</mat-icon>
+		</button>
+	</div>
+	<div>
+		<a routerLink="/home"> Home </a>	
+	</div>
+	<div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+		<ul fxLayout fxLayoutGap="15px" class="navigation-items">
+			<li> <a> Perfil</a> </li>	
+
+			<li> <a> LogOut</a> </li>	
+		</ul>	
+	</div>
+</mat-toolbar>
