@@ -1,8 +1,16 @@
 <mat-sidenav-container>
+
+	<!-- Navigation Menu -->
 	<mat-sidenav #sidenav role="navigation">
 	</mat-sidenav>
+
 	<mat-sidenav-content>
-		<app-header></app-header>
+
+		<!--Header -->
+		<app-header (headerMenuClick)="sidenav.toggle()"></app-header>
+
+		<!--Conteudo da pagina -->
 		<router-outlet></router-outlet>
+
 	</mat-sidenav-content>
 </mat-sidenav-container>
