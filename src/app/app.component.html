@@ -2,8 +2,9 @@
 
 	<!-- Navigation Menu -->
 	<mat-sidenav #sidenav role="navigation">
+		<app-header-menu-list (menuClose)="sidenav.close()"></app-header-menu-list>
 	</mat-sidenav>
-
+	
 	<mat-sidenav-content>
 
 		<!--Header -->

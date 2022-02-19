@@ -11,6 +11,7 @@ import { EntregasComponent } from './entregas/entregas.component';
 import { HeaderComponent } from './header/header.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     EntregasComponent,
     HeaderComponent,
     CalendarioComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderMenuListComponent,
   ],
   imports: [
     BrowserModule,
