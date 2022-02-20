@@ -1,0 +1,12 @@
+mat-grid-list{
+	margin: 10px;
+}
+
+mat-grid-tile{
+	background-color: lightgray;
+}
+ 
+h3{ 
+	margin:0px; }
+p{ 
+	margin:0px; }

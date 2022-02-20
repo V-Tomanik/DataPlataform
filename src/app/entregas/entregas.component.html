@@ -1,1 +1,11 @@
-<p>entregas works!</p>
+<mat-grid-list cols="2" rowHeight="100px" gutterSize="10px">
+
+	<mat-grid-tile *ngFor="let entrega of tiposEntregas">
+		<div fxLayout="row" fxLayoutAlign="center center" style="height: 100px"
+		routerLink={{entrega.rota}}>
+			<div>{{entrega.nome}}</div>
+			<div>{{entrega.descricao}}</div>
+		</div>
+	</mat-grid-tile>
+
+</mat-grid-list>
