@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-list.component';
+import { EntregaComponent } from './entregas/entrega/entrega.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-l
     CalendarioComponent,
     HomeComponent,
     HeaderMenuListComponent,
+    EntregaComponent,
   ],
   imports: [
     BrowserModule,
