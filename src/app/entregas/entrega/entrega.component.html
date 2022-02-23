@@ -1,1 +1,37 @@
-<p>entrega works!</p>
+<div class="container">
+	
+	<form [formGroup]="templateForm" (ngSubmit)="onSubmit()">
+
+		<div>
+			<mat-form-field appearance="outline">
+				<mat-label>Frequencia</mat-label>
+				<mat-select formControlName="username">
+					<mat-option value="mensal"> Mensal </mat-option>
+					<mat-option value="semanal"> Semanal </mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+
+		<div>
+			<mat-form-field appearance="outline">
+				<mat-label>email</mat-label>
+				<input matInput formControlName="email">
+			</mat-form-field>
+		</div>
+
+		<div>
+			<mat-form-field appearance="outline">
+				<mat-label>gender</mat-label>
+				<input matInput formControlName="gender">
+			</mat-form-field>
+		</div>
+
+		<div>
+			<input type="file" formControlName="files">
+		</div>
+
+		<button mat-flat-button>Enviar</button>
+
+	</form>
+
+</div>

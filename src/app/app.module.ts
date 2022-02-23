@@ -13,6 +13,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-list.component';
 import { EntregaComponent } from './entregas/entrega/entrega.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EntregaComponent } from './entregas/entrega/entrega.component';
     BrowserModule,
     AppRoutingModule,
 		MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+		ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
