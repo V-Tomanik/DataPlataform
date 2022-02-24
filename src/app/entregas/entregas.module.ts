@@ -6,9 +6,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
 
 import { EntregasComponent } from "./entregas.component";
-import { EntregaComponent } from "./entrega/entrega.component";
-
-
+import { DetpiComponent } from './forms/detpi/detpi.component';
+import { SimulacoesComponent } from './forms/simulacoes/simulacoes.component';
+import { DealsComponent } from './forms/deals/deals.component';
 
 
 @NgModule({
@@ -19,14 +19,14 @@ import { EntregaComponent } from "./entrega/entrega.component";
 		BrowserAnimationsModule,
 		ReactiveFormsModule
 	],
-	exports:[
-		EntregasComponent,
-		EntregaComponent
-	],
+
+	exports:[],
 
 	declarations:[
 	EntregasComponent,
-	EntregaComponent]
+ 	DetpiComponent,
+ 	SimulacoesComponent,
+ 	DealsComponent]
 })
 
 
