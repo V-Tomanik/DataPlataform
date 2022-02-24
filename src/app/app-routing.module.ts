@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarioComponent } from './calendario/calendario.component';
-import { EntregasComponent } from './entregas/entregas.component';
+import { EntregasRoutingModule } from './entregas/entregas-routing.module';
 import { HomeComponent } from './home/home.component';
-import { EntregaComponent } from './entregas/entrega/entrega.component';
 
 //Rotas do aplicativo
 const routes: Routes = [
 	{path:'home', component:HomeComponent},
 	{path:'',redirectTo: '/home', pathMatch:'full'},
-	{path:'entregas',component: EntregasComponent},
-	{path:'entregas/:nome', component: EntregaComponent},
+	{path:'entregas', loadChildren:() => EntregasRoutingModule},
 	{path:'calendario',component: CalendarioComponent}
 ];
 
