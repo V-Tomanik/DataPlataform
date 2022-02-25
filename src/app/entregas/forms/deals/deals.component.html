@@ -44,7 +44,8 @@
 			<input type="file" formControlName="files">
 		</div>
 		
-		<button mat-flat-button>Enviar</button>
+		<button mat-flat-button [disabled]='!dealsForm.valid'>Enviar</button>
+
 
 	</form>
 

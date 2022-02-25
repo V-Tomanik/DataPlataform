@@ -9,7 +9,10 @@ const routes: Routes = [
 	{path:'home', component:HomeComponent},
 	{path:'',redirectTo: '/home', pathMatch:'full'},
 	{path:'entregas', loadChildren:() => EntregasRoutingModule},
-	{path:'calendario',component: CalendarioComponent}
+	{path:'calendario',component: CalendarioComponent},
+
+//	{path:'**',component: CalendarioComponent}
+
 ];
 
 @NgModule({

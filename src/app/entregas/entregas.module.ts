@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { EntregasRoutingModule } from "./entregas-routing.module";
-import { MaterialModule } from "../material/material.module";
+import { MaterialModule } from "../shared/material/material.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
 

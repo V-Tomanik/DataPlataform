@@ -1,9 +1,13 @@
 mat-grid-list{
-	margin: 10px;
+	margin-left: 100px;
+	margin-right: 100px;	margin-top: 50px;	
 }
 
+
 mat-card{
-	width: 100%;
+/*A sombra do botão precisa aparecer, por isso não pode ser 100%*/
+	width:  80%;
+	height: 80%; 
 	cursor: pointer;
 }
  

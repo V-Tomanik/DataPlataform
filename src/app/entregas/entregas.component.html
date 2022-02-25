@@ -1,6 +1,6 @@
-<mat-grid-list cols="2" rowHeight="100px" gutterSize="10px">
+<mat-grid-list cols="2" rowHeight="200px" gutterSize="30px" *ngIf="listEntregas != null; else semEntregas">
 
-	<mat-grid-tile *ngFor="let entrega of tiposEntregas">
+	<mat-grid-tile *ngFor="let entrega of listEntregas">
 		<mat-card routerLink={{entrega.rota}}>
 			<mat-card-title> {{entrega.nome}}</mat-card-title>
 			<mat-card-content> {{entrega.descricao}}</mat-card-content>
@@ -8,3 +8,7 @@
 	</mat-grid-tile>
 
 </mat-grid-list>
+
+<ng-template #semEntregas>
+	<h1>Sem entregas habilitadas!</h1>
+</ng-template>
