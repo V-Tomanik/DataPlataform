@@ -1,11 +1,13 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 
 
 @Injectable()
-export class PostService{
-
-	constructor(private http: HttpClient){}
+export class BackEndService{
+	/**
+		* Serviço para comunicação com o backend
+		*
+		*/
+	constructor(){}
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { FormService } from '../../services/forms.service';
 
 @Component({
   selector: 'app-deals',
@@ -10,8 +11,11 @@ export class DealsComponent implements OnInit {
 
 	dealsForm!:FormGroup;
 
-  constructor(private formBuilder: FormBuilder)
-						  { }
+	selectedFiles:string[]=[]
+
+  constructor(private formBuilder: FormBuilder,
+						  private formService: FormService){
+							}
 
   ngOnInit(): void {
 
@@ -23,10 +27,38 @@ export class DealsComponent implements OnInit {
 		);
   }
 	
-	onSubmit(){
-		console.log(this.dealsForm	)
+	onSubmit(form:FormGroupDirective){
+		/**
+			* Função de envio do forms para backend, result deve retornar um observable
+			* para podemos entender o resultado e mostrar para o usuario
+			*
+			*/
+
+			const result = this.formService.uploadFile(this.dealsForm)
+			if (result == null) { 
+				alert("nenhum arquivo selecionado")
+				return	
+			}
+			result.subscribe(count => alert(count))
+			form.resetForm()
+			this.dealsForm.reset()
+	}
+	onFileSelected(event:any){
+		/**
+			* Função para adicionar o arquivo selectionado na lista de arquivos
+			* Ativado toda vez que há uma mudança no input file 
+			*/
+		const event_file:File[] = event.target.files;
+		Array.prototype.forEach.call(event_file, child => {
+		this.selectedFiles.push(child.name)
+		});
+	}
+
+	removeFile(file_index:number){
+		this.selectedFiles.splice(file_index,1)
+	}
 
 	}
-}
+
 
 

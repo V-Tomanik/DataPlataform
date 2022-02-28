@@ -12,6 +12,8 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-list.component';
 import { EntregasModule } from './entregas/entregas.module';
+import { BackEndService } from './shared/services/httpClient.service';
+import { FeaturesService } from './shared/services/features.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { EntregasModule } from './entregas/entregas.module';
 		ReactiveFormsModule,
 		EntregasModule
   ],
-  providers: [],
+  providers: [BackEndService, FeaturesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

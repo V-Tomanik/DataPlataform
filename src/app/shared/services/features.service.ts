@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class FeaturesService{
+	/**
+		* Serviço para consulta das features (ex: páginas) disponiveis para o usuário verificar
+		*/
 
 	constructor(){}
 

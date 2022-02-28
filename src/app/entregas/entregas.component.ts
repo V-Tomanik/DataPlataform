@@ -8,13 +8,17 @@ import { entregaModel } from './models/entrega.model';
   styleUrls: ['./entregas.component.css']
 })
 export class EntregasComponent implements OnInit {
-	
-	tiposEntregas: entregaModel[] = [{id:'detpi',nome:"DetPI", descricao:"Detalhamento de PI", rota:"detpi" },
-									{id:'deals',nome:"Deals", descricao:"Deals", rota:"deals" },
-									{id:'simulacoes',nome:"Deals", descricao:"Deals", rota:"deals" }
-	]
+	/**
+		* Componente "mãe" das entregas, lista todas as entregas disponiveis para serem enviadas
+		* 
+		*/
 
-	listEntregas!: null | entregaModel[]
+	tiposEntregas: entregaModel[] = [
+									{id:'detpi',nome:"DetPI", descricao:"Detalhamento de PI", rota:"detpi" },
+									{id:'deals',nome:"Deals", descricao:"Deals", rota:"deals" },
+									{id:'simulacoes',nome:"Deals", descricao:"Deals", rota:"deals" }]
+
+	listEntregas!: null | entregaModel[] /* Lista de entregas disponiveis para o usuario */
 
   constructor(private featuresService: FeaturesService) {}
 
@@ -22,10 +26,15 @@ export class EntregasComponent implements OnInit {
 		this.listEntregas = this.filterEntregas(this.tiposEntregas)
   }
 
-	filterEntregas(value:entregaModel[]){
+	filterEntregas(list:entregaModel[]){
+		/**
+			* Função para a filtragem das entregas disponiveis para o usuario
+			* @param list: lista com todos os tipos de entrega possiveis
+			*/
+
 	 	const	activeFeatures = this.featuresService.getActiveEntregas()
 		if (activeFeatures){
-			return value.filter(({id})=> activeFeatures.includes(id));
+			return list.filter(({id})=> activeFeatures.includes(id));
 		}
 		return null
 	}

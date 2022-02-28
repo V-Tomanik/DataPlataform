@@ -10,6 +10,8 @@ import { DetpiComponent } from './forms/detpi/detpi.component';
 import { SimulacoesComponent } from './forms/simulacoes/simulacoes.component';
 import { DealsComponent } from './forms/deals/deals.component';
 
+import { FormService } from "./services/forms.service";
+
 
 @NgModule({
 	imports:[
@@ -26,7 +28,9 @@ import { DealsComponent } from './forms/deals/deals.component';
 	EntregasComponent,
  	DetpiComponent,
  	SimulacoesComponent,
- 	DealsComponent]
+ 	DealsComponent],
+
+	providers:[ FormService ]
 })
 
 
