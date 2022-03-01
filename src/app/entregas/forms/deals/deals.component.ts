@@ -10,8 +10,11 @@ import { FormService } from '../../services/forms.service';
 export class DealsComponent implements OnInit {
 
 	dealsForm!:FormGroup;
+	
+	formData = new FormData;
 
-	selectedFiles:string[]=[]
+	selectedFiles:File[]=[];
+	filesNames: string[]=[];
 
   constructor(private formBuilder: FormBuilder,
 						  private formService: FormService){
@@ -34,8 +37,6 @@ export class DealsComponent implements OnInit {
 			*
 			*/
 
-			console.log("Enviei")
-
 			const result = this.formService.uploadFile(this.dealsForm)
 			if (result == null) { 
 				alert("nenhum arquivo selecionado")
@@ -44,20 +45,26 @@ export class DealsComponent implements OnInit {
 			result.subscribe(count => alert(count))
 			form.resetForm()
 			this.dealsForm.reset()
+
+			this.selectedFiles=[];
+			this.filesNames=[];
 	}
 	onFileSelected(event:any){
 		/**
 			* Função para adicionar o arquivo selectionado na lista de arquivos
 			* Ativado toda vez que há uma mudança no input file 
 			*/
-		const event_file:File[] = event.target.files;
-		Array.prototype.forEach.call(event_file, child => {
-		this.selectedFiles.push(child.name)
-		});
-	}
+			this.filesNames=[]
+			this.selectedFiles = [...this.selectedFiles,...event.target.files];
+			Array.prototype.forEach.call(this.selectedFiles, child => {
+				this.filesNames.push(child.name)});
+		}
+
+
 
 	removeFile(file_index:number){
 		this.selectedFiles.splice(file_index,1)
+		this.filesNames.splice(file_index,1)
 	}
 
 	}

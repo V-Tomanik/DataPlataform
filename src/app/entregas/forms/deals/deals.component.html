@@ -47,17 +47,15 @@
 
 		<div class="file-upload">
 
-			 {{selectedFiles || "No file uploaded yet."}}
-
 			<button mat-mini-fab color="primary" type="file" 
 					(click)="fileUploadInput.click()">
-
 				<mat-icon>attach_file</mat-icon>
 			</button>
+			<span *ngIf="filesNames.length==0">Nenhum arquivo selecionado</span>
 		</div>
 		
 
-		<div *ngFor="let file of selectedFiles;let i =index">
+		<div *ngFor="let file of filesNames;let i =index">
 			<span>{{file}}</span>
 			<button class="mdc-button" (click)="removeFile(i)">
 	   	<span class="mdc-button__label">Remover</span>
