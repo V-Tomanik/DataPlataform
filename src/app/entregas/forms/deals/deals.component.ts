@@ -34,6 +34,8 @@ export class DealsComponent implements OnInit {
 			*
 			*/
 
+			console.log("Enviei")
+
 			const result = this.formService.uploadFile(this.dealsForm)
 			if (result == null) { 
 				alert("nenhum arquivo selecionado")

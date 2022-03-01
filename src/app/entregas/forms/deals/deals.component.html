@@ -2,7 +2,7 @@
 
 	<h1>Upload Deals</h1>
 
-	<form [formGroup]="dealsForm" #form="ngForm" (ngSubmit)="onSubmit(form)" >
+	<form [formGroup]="dealsForm" #form="ngForm">
 
 		<div>
 			<mat-form-field appearance="outline">
@@ -41,17 +41,31 @@
 		</div>
 
 		<div>
-			<input 	type="file" formControlName="files" [multiple]=true
-							(change)="onFileSelected($event)">
+			<input 	class ="file-input" type="file" formControlName="files" [multiple]=true
+							(change)="onFileSelected($event)" #fileUploadInput>
 		</div>
+
+		<div class="file-upload">
+
+			 {{selectedFiles || "No file uploaded yet."}}
+
+			<button mat-mini-fab color="primary" type="file" 
+					(click)="fileUploadInput.click()">
+
+				<mat-icon>attach_file</mat-icon>
+			</button>
+		</div>
+		
+
 		<div *ngFor="let file of selectedFiles;let i =index">
 			<span>{{file}}</span>
-			<<button (click)="removeFile(i)"></button>
+			<button class="mdc-button" (click)="removeFile(i)">
+	   	<span class="mdc-button__label">Remover</span>
+			</button>
 			
 		</div>
-		<button mat-raised-button 
-						[disabled]='!dealsForm.valid'
-						>Enviar</button>
+		<button mat-raised-button  (click)="onSubmit(form)"
+						[disabled]='!dealsForm.valid'>Enviar</button>
 
 
 	</form>
