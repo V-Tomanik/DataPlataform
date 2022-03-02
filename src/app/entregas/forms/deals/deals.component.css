@@ -1,8 +1,35 @@
+h1{
+  text-align: center;
+}
+
+form{
+	display:grid;
+	align-items:center;
+}
+
+
+#input_forms{
+	grid-column:1/2;
+	justify-self:end;
+	margin-right: 20%;
+}
+
+#files_form{
+	grid-column:2/3;
+	justify-self:start;
+	margin-left: 20%;
+}
+
+#send_form{
+	grid-column:1/3;
+	width: 200px;
+	justify-self: center;
+}
+
 .file-input{
 	display:  none;
 }
 
-.file-upload{
-
-	margin-bottom: 10px;
+.file-upload button{
+	margin-right: 20px;
 }

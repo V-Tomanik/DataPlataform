@@ -16,7 +16,8 @@ export class FormService{
 		//Pega o arquivo	
 		//const file:File = event.target.files[0]	;
 		
-		if (event.value.files != null){
+		console.log(event);
+		if (false){
 			return interval(1000);
 	}
 		return null

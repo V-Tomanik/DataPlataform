@@ -13,8 +13,8 @@ export class DealsComponent implements OnInit {
 	
 	formData = new FormData;
 
-	selectedFiles:File[]=[];
-	filesNames: string[]=[];
+	selectedFiles:File[] =[];
+	filesNames:string[] =[];
 
   constructor(private formBuilder: FormBuilder,
 						  private formService: FormService){
@@ -37,6 +37,11 @@ export class DealsComponent implements OnInit {
 			*
 			*/
 
+			Array.prototype.forEach.call(this.selectedFiles, child => {
+				this.formData.append('file',child)});
+			
+			this.dealsForm.patchValue({'files':this.formData})
+
 			const result = this.formService.uploadFile(this.dealsForm)
 			if (result == null) { 
 				alert("nenhum arquivo selecionado")
@@ -49,16 +54,22 @@ export class DealsComponent implements OnInit {
 			this.selectedFiles=[];
 			this.filesNames=[];
 	}
+
 	onFileSelected(event:any){
 		/**
-			* Função para adicionar o arquivo selectionado na lista de arquivos
 			* Ativado toda vez que há uma mudança no input file 
+		  *
+			* Função para adicionar o arquivo selectionado na lista de arquivos
 			*/
 			this.filesNames=[]
+
+			//Adiciona os valores atuais e os arquivos dos eventos
 			this.selectedFiles = [...this.selectedFiles,...event.target.files];
+
+			//Atualiza a lista com nomes de arquivos
 			Array.prototype.forEach.call(this.selectedFiles, child => {
 				this.filesNames.push(child.name)});
-		}
+	}
 
 
 
@@ -67,7 +78,4 @@ export class DealsComponent implements OnInit {
 		this.filesNames.splice(file_index,1)
 	}
 
-	}
-
-
-
+}
