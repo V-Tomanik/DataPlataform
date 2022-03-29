@@ -11,8 +11,7 @@ export class DealsComponent implements OnInit {
 
 	dealsForm!:FormGroup;
 	
-	formData = new FormData;
-
+	//TODO Pegar o nome dos arquivos dentro do selectedFiles
 	selectedFiles:File[] =[];
 	filesNames:string[] =[];
 
@@ -25,34 +24,37 @@ export class DealsComponent implements OnInit {
 		this.dealsForm = this.formBuilder.group(
 			{'meio': [null, Validators.required],
 			'mes': [null,[Validators.required],],
-			'gender': ['male'],
+			'tipo': [null, Validators.required],
 			'files':[null]}
 		);
   }
 	
-	onSubmit(form:FormGroupDirective){
+	onSubmit(form:FormGroup){
 		/**
 			* Função de envio do forms para backend, result deve retornar um observable
 			* para podemos entender o resultado e mostrar para o usuario
 			*
 			*/
 
-			Array.prototype.forEach.call(this.selectedFiles, child => {
-				this.formData.append('file',child)});
-			
-			this.dealsForm.patchValue({'files':this.formData})
+			this.dealsForm.patchValue({'files':this.selectedFiles})
 
+			//Faz o upload para o backend
 			const result = this.formService.uploadFile(this.dealsForm)
 			if (result == null) { 
 				alert("nenhum arquivo selecionado")
 				return	
 			}
-			result.subscribe(count => alert(count))
-			form.resetForm()
-			this.dealsForm.reset()
+			
+			result.subscribe(message => alert(message))
 
+			//Reseta o forms
 			this.selectedFiles=[];
 			this.filesNames=[];
+			form.reset();
+			//Reseta os validadores
+			for (let control in form.controls) {
+      	form.controls[control].setErrors(null);
+    }
 	}
 
 	onFileSelected(event:any){

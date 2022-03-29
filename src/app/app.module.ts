@@ -6,12 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material/material.module';
 
+import { EntregasModule } from './entregas/entregas.module';
+import { RulesTemplatesModule } from './rules-templates/rules-templates.module'
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderMenuListComponent } from './header/header-menu-list/header-menu-list.component';
-import { EntregasModule } from './entregas/entregas.module';
 import { BackEndService } from './shared/services/httpClient.service';
 import { FeaturesService } from './shared/services/features.service';
 
@@ -29,7 +31,8 @@ import { FeaturesService } from './shared/services/features.service';
 		MaterialModule,
     BrowserAnimationsModule,
 		ReactiveFormsModule,
-		EntregasModule
+		EntregasModule,
+		RulesTemplatesModule
   ],
   providers: [BackEndService, FeaturesService],
   bootstrap: [AppComponent]

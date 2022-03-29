@@ -1,15 +1,14 @@
-import { Injectable } from "@angular/core";
-import { BackEndService } from "src/app/shared/services/httpClient.service";
-
-import { interval } from 'rxjs' 
+//import { HttpClient } from "@angular/common/http";
+import { EventEmitter, Injectable } from "@angular/core";
+//import { BackEndService } from "src/app/shared/services/httpClient.service";
 
 
 @Injectable()
 export class FormService{
-
+	httpClient= new EventEmitter<String>()
 	fileName = '';
 
-	constructor(httpClient: BackEndService) {
+	constructor() {
 	}
 
 	uploadFile(event:any){
@@ -17,8 +16,10 @@ export class FormService{
 		//const file:File = event.target.files[0]	;
 		
 		console.log(event);
-		if (false){
-			return interval(1000);
+		const file:File[] = event.value.files
+		console.log(file)
+		if (file.length > 0 ){
+			return this.httpClient
 	}
 		return null
 	}

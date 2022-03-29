@@ -10,7 +10,7 @@ export class FeaturesService{
 
 
  	private featuresList ={
-		entregas:['detpi','deals'],
+		entregas:['detpi','deals','simulacoes','pvis'],
 		calendario:true
 	}
 

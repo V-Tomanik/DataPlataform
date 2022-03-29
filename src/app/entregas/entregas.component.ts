@@ -14,9 +14,10 @@ export class EntregasComponent implements OnInit {
 		*/
 
 	tiposEntregas: entregaModel[] = [
+									{id:'deals',nome:"Deals", descricao:"Deals", rota:"deals"},
 									{id:'detpi',nome:"DetPI", descricao:"Detalhamento de PI", rota:"detpi" },
-									{id:'deals',nome:"Deals", descricao:"Deals", rota:"deals" },
-									{id:'simulacoes',nome:"Deals", descricao:"Deals", rota:"deals" }]
+									{id:'pvis',nome:"PVIs", descricao:"PVIs", rota:"pvi" },
+									{id:'simulacoes',nome:"Simulações", descricao:"Simulações contendo os KPIs mensais e semanais", rota:"simulacoes" }]
 
 	listEntregas!: null | entregaModel[] /* Lista de entregas disponiveis para o usuario */
 
